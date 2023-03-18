@@ -15,7 +15,6 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
 
   try {
     const createUserUseCase = makeCreateUserUseCase();
-
     await createUserUseCase.execute({
       name,
       email,
