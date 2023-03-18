@@ -5,9 +5,24 @@ import { prisma } from '@/lib/prisma';
 import { UsersRepository } from '../users-repository';
 
 export class PrismaUsersRepository implements UsersRepository {
+  async findAll() {
+    const users = await prisma.user.findMany({
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        created_at: true,
+      },
+    });
+
+    return users;
+  }
+
   async findById(userId: string) {
     const user = await prisma.user.findUnique({
-      where: { id: userId },
+      where: {
+        id: userId,
+      },
     });
 
     return user;
