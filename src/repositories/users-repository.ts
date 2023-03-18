@@ -8,6 +8,7 @@ interface GetAllUsersResponse {
 }
 
 export interface UsersRepository {
+  delete(userId: string): Promise<void>;
   findAll(): Promise<GetAllUsersResponse[]>;
   findById(userId: string): Promise<User | null>;
   findByEmail(email: string): Promise<User | null>;

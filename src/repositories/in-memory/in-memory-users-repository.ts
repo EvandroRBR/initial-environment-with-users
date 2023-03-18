@@ -6,6 +6,10 @@ import { UsersRepository } from '../users-repository';
 export class InMemoryUsersRepository implements UsersRepository {
   public items: User[] = [];
 
+  async delete(userId: string) {
+    this.items.pop();
+  }
+
   async findAll() {
     const users = this.items;
 

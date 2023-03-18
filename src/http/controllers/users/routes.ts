@@ -6,6 +6,7 @@ import { create } from './create';
 import { authenticate } from './authenticate';
 import { profile } from './profile';
 import { getAllUsers } from './get-all-users';
+import { deleteUser } from './delete';
 
 export async function usersRoutes(app: FastifyInstance) {
   app.post('/users', create);
@@ -13,4 +14,5 @@ export async function usersRoutes(app: FastifyInstance) {
 
   app.get('/me', { onRequest: [verifyJWT] }, profile);
   app.get('/users', { onRequest: [verifyJWT] }, getAllUsers);
+  app.delete('/users/:userId', { onRequest: [verifyJWT] }, deleteUser);
 }
