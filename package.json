@@ -7,8 +7,8 @@
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
-    "test": "vitest run --dir src/use-cases",
-    "test:watch": "vitest --dir src/use-cases",
+    "test": "vitest run --dir src/use-cases/tests",
+    "test:watch": "vitest --dir src/use-cases/tests",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "test:create-prisma-environment": "npm link ./prisma/vitest-environment-prisma",
@@ -21,6 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/jwt": "6.7.1",
     "@prisma/client": "4.11.0",
     "bcryptjs": "2.4.3",
     "dotenv": "16.0.3",

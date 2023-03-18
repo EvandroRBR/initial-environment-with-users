@@ -1,9 +1,9 @@
 import { compare } from 'bcryptjs';
 import { beforeEach, describe, expect, it } from 'vitest';
 
-import { UserAlreadyExistsError } from './errors/user-already-exists-error';
+import { UserAlreadyExistsError } from '../errors/user-already-exists-error';
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository';
-import { CreateUserUseCase } from './create-user';
+import { CreateUserUseCase } from '../create-user';
 
 let usersRepository: InMemoryUsersRepository;
 let sut: CreateUserUseCase;

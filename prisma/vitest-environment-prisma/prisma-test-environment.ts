@@ -12,11 +12,8 @@ function generateDatabaseURL(schema: string) {
   }
 
   const url = new URL(process.env.DATABASE_URL);
-  console.log('url 1: ', url);
 
   url.searchParams.set('schema', schema);
-
-  console.log('url 2: ', url);
 
   return url.toString();
 }
